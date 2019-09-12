@@ -16,7 +16,7 @@ from keras.callbacks import ModelCheckpoint
 import keras.backend as K
 
 #reading the csv file
-data = pd.read_csv('C:/Users/Shubham.000/Desktop/p1/data.csv')
+data = pd.read_csv('data.csv')
 print(data.shape)
 
 #making dataset out of the data 
@@ -74,7 +74,7 @@ def keras_model(image_x,image_y):
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     #saving the model into a file
-    filepath = "C:/Users/Shubham.000/Desktop/p1/devanagari.h5"
+    filepath = "devanagari.h5"
     checkpoint1 = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
     callbacks_list = [checkpoint1]
     
